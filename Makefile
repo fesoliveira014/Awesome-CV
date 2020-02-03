@@ -1,9 +1,9 @@
 .PHONY: examples
 
 CC = xelatex
-EXAMPLES_DIR = examples
-RESUME_DIR = examples/resume
-CV_DIR = examples/cv
+EXAMPLES_DIR = ./examples
+RESUME_DIR = ./examples/resume
+CV_DIR = ./examples/cv
 RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
 CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
 
@@ -20,3 +20,10 @@ coverletter.pdf: $(EXAMPLES_DIR)/coverletter.tex
 
 clean:
 	rm -rf $(EXAMPLES_DIR)/*.pdf
+
+# Windows build commands
+# cv.pdf:
+#    xelatex.exe -output-directory=examples examples/cv.tex
+
+# coverletter.pdf:
+#    xelatex.exe -output-directory=examples examples/coverletter.tex

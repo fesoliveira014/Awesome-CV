@@ -93,8 +93,8 @@
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
 %-------------------------------------------------------------------------------
-% Configure a directory location for fonts(default: 'fonts/')
-\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
+% Configure a directory location for fonts(default: './fonts/')
+\newcommand*{\fontdir}[1][./fonts/]{\def\@fontdir{#1}}
 \fontdir
 
 
@@ -161,10 +161,10 @@
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
-\newfontfamily\FAA[Path=fonts/]{FontAwesome}
+\newfontfamily\FAA[Path=./fonts/]{FontAwesome}
 % Set font for header (default is Roboto)
 \newfontfamily\headerfont[
-  Path=fonts/,
+  Path=./fonts/,
   UprightFont=*-Regular,
   ItalicFont=*-Italic,
   BoldFont=*-Bold,
@@ -172,7 +172,7 @@
 ]{Roboto}
 
 \newfontfamily\headerfontlight[
-  Path=fonts/,
+  Path=./fonts/,
   UprightFont=*-Thin,
   ItalicFont=*-ThinItalic,
   BoldFont=*-Medium,
