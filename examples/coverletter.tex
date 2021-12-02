@@ -78,14 +78,14 @@
 %-------------------------------------------------------------------------------
 % The company being applied to
 \recipient
-  {Company Recruitment Team}
-  {Advanced Micro Devices Inc.}
+  { }
+  { }
 % The date on the letter, default is the date of compilation
 \letterdate{\today}
 % The title of the letter
 \lettertitle{Job Application for Software Engineer}
 % How the letter is opened
-\letteropening{Greetings,}
+\letteropening{Dear Recruitment Team,}
 % How the letter is closed
 \letterclosing{Sincerely,}
 % Any enclosures with the letter
@@ -114,16 +114,22 @@
 %-------------------------------------------------------------------------------
 \begin{cvletter}
 
-\lettersection{About Me}
-I am a Software Security Analyst working at SIDI, a Samsung research institute in Brazil. I am working in the security analysis of Android and Tizen services and applications on Samsung flagship devices, as well of many of their web applications and services. I have a Bachelor's Degree with Honours in Computer Science from State University of Campinas (Unicamp), in Brazil, and I was a visiting student at University of Toronto for 2 semesters in 2014. I also have development experience from working with a smaller team at my previous position, where I was mostly working in BIOS and bootloaders in security related solutions.
+% \lettersection{About Me}
+I am a software engineer currently working at Samsung in low level systems. I started my career working in an embedded security startup customizing VeraCrypt bootloaders for ATM machines and modifying the BIOS to support remote management. After that, I started working at Samsung as a security analyst, where I would take part on security assessments of Android system services, drivers and applications for Samsung flagship devices. Two years ago I transitioned back into engineering by changing teams inside Samsung, and since then I have been working on low level systems, such as Trusted Applications running in ARM's TrustZone, Samsung's Android bootloader and providing consultancy in many of our projects.
 
-\lettersection{Why ARM?}
-ARM has been a paramount of innovation in the computer industry. It was ARM's processors that enabled the existence of most modern handheld and IoT devices, and they continue to bring new and exciting technologies to the market. More recently ARM has been pushing into the desktop and server markets, areas in much need of ARM's vision and insight. I also have great interest in other areas pursued by ARM, such as their mobile GPUs and IoT projects.
+% \lettersection{Why me?}
+Over the past 5 years I have acquired a lot of experience and made many contributions to projects I worked on that are a testament to my skills, all of which I am confident are a great fit for this position. Some highlights are: 
+\begin{itemize}
+  \item I implemented a macro-based testing framework for Trusted Application development in C, which helped us ensure the quality of our TA code; 
+  \item I reversed engineered the gRPC protocol used by Samsung's Bixby and implemented tools to facilitate eavesdropping communication between device and server to assist our security assessment of Bixby's systems; 
+  \item I led a major refactoring in Samsung Knox's Universal Credential Manager codebase in order to facilitate future extension; 
+  \item I worked in customizations in bootloaders for x86 and ARM64 architectures, both focused in adding security features;
+\end{itemize}
 
-\lettersection{Why Me?}
-For the past couple years I have worked in both Software Security Engineering and Analysis. Through these I am confident I have acquired many skills that make me an excellent fit for your positions in Low Level Software Engineering. When I commenced these jobs I had never had any experience with security or low level programming, so I had to learn these skills the hard way, which I did with efficiency and efficacy in order to fullfil my tasks. Through these new experiences I became confident in working with mission-critical code and systems. I embrace challenging tasks and I am eager and enthusiastic when working with and learning about new technologies. \\
+% \lettersection{Why Canonical?}
+Canonical sits atop the Linux world. Your engineering teams create and maintain the technologies that power most of the world's servers and devices overcoming many interesting and difficult challenges in the process. Moreover, Canonical is a leader in the Open Source community, showing the world that not only it is a viable business model, but also a successful one. While I don't have many contributions to the community, I am passionate by what it stands for and its many achievements, and I can see no better place to become more active and give back to the community than at Canonical. 
 
-AMD is a fantastic company and one of the pillars that helped shape the world of technology we live in today. I look forward to the opportunity of working in such a great company and I hope to hear from you soon.
+I'm thrilled for an opportunity to contribute to Open Source and to Ubuntu in general, and hope that we can talk soon!
 
 \end{cvletter}
 

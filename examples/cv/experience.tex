@@ -13,31 +13,39 @@
     {Systems Software Engineer} % Job title
     {SiDi (Samsung Institute for the Development of Informatics)} % Organization
     {Campinas, Brazil} % Location
-    {May 2019 - PRESENT} % Date(s)
+    {May 2019 - Present} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {R\&D of trusted applications and systems for Samsung devices.}
-        \item {Collaborated with members in remote offices on the design of trusted applications.}
-        \item {Contributed to the Samsung Android Framework, implementing system services and drivers.}
-        \item {Developed applications in constrained environments with limited resources (ARM TrustZone).}
-        \item {Developed Android applications and SDKs.}
-        % \item {Conducted R\&D on hardwares such as the Embedded Secure Element (eSE) in mobile phones.}
+        \item {\textbf{HDM Detector} - A new feature for the Hypervisor Device Management (\textit{HDM}) Framework, part of Samsung's Knox B2B Framework. This feature tries to ensure that a given installed application in a managed device has the correct version. If not, then it takes action ranging from alerting the user or admin to blocking device features, such as the camera or wireless connections. I am responsible for researching the feasibility of the feature and implementing the first proof-of-concept. For this we add code to all layers of the Android Framework: higher level front facing Java APIs, native framework and trusted application connector in C++ and trusted application running in the ARM's TrustZone in C.}
+        \item {\textbf{Bootloader Forensics} - A new security feature for the Samsung Bootloader (\textit{sbl}) for the purpose of validating and detect possible modifications of key aspects of the system. This includes validation of the bootloader and overall system states, collecting relevant data for storage and encrypting and signing the information to prevent tampering. This feature works as an extension of the Verified Boot and other security features already present in the \textit{sbl}.}
+        \item {\textbf{Universal Credential Manager (UCM)} - Embedded Secure Element (eSE) based solution for storing credentials and using cryptographic operations over that environment. We collaborate with a team in South Korea for the extension of UCM. I act as the technical lead for this project and my team is responsible for adding new features to it's trusted application and framework, as well as doing a full refactor of the framework code to enable better testing and further extension.}
+        \item {\textbf{Digital Key} - Solution for using a smartphone as a car key, implementing the specification for Digital Key issued by the Car Connectivity Consortium (CCC). We implemented a solution in ARM TrustZone for enabling secure communication between the Android Framework and the embedded secure element (eSE). We also designed and implemented many features for the Digital Key Framework, which will be available for third party developers as part of Samsung Knox.}
+        \item {\textbf{Miscellaneous} - I also provide support for my team in tasks related to the implementation of trusted applications, low-level programming and systems and provide support on general security concepts.}
+        % \item {Part of team responsible for developing new security systems features and products for Samsung Knox.}
+        % \item {Developed native applications in constrained environments with limited resources (ARM TrustZone).}
+        % \item {Collaborated with members in remote offices on the requirement analysis, design, development and test of trusted applications and systems.}
+        % \item {Contributed to the Samsung Android Framework, implementing Android system services, drivers and features.}
+        % \item {Contributed to the implementation of new feature in embedded elements of Samsung Device, such as in the Embedded Secure Element (eSE).}
       \end{cvitems}
     }
 
   \cventry
     {Software Security Analyst} % Job title
-    {SIDI (Samsung Institute for the Development of Informatics)} % Organization
-    {Campinas, Brazil} % Location
+    {} % Organization
+    {} % Location
     {May 2017 - Apr 2019} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Performed security analysis in Android and Tizen services, device drivers and applications.}
-        \item {Performed reverse engineering in Samsung proprietary code, static and dynamic analysis and design evaluation.}
-        \item {Acted in leadership roles, assigning tasks and coordinating with members in remote offices.}
-        \item {Took part in penetration testing several Samsung web applications and servers.}
-        \item {Provided security consulting for internal projects and teams.}
-        \item {Implemented tools in order to facilitate and automate several project related tasks.}
+        \item {\textbf{Bixby} - I was responsible for doing a full security assessment of Samsung's voice assistant, Bixby. This meant touching most aspects of the solution, inspecting the phone clients, servers, and researching ways to assess the security of its machine learning capabilities. This would be through novel methods, such as Adversarial Attacks on the ML models. I also conducted the development of tools to reverse engineer the gRPC protocol used for communication between the client and servers.}
+        \item {\textbf{Android System Services} - Our team was responsible for the continuous security assessment of Android system services of every Samsung flagship device. We would look for vulnerabilities in these services that could enable attacks such as privilege escalation, arbitrary read/write or unauthorized access to certain features. This included writing exploits for vulnerabilities we found and writing reports that would be sent to the teams responsible for the assessed service.}
+        \item {\textbf{Tizen Services and Applications} - We provided security analysis for Tizen applications and services. Tizen is a Linux-based operating system that powers Samsung wearables, smart TVs, IoT devices, among others. I was part of a small subset of our team that specialized and led security assessments in these devices.}
+        \item {\textbf{Web and Android Applications and Services} - We also provided security analysis for web applications, such as Samsung Account, and Android applications, such as SHealth.}
+        % \item {Performed security analysis in Android and Tizen services, device drivers and applications.}
+        % \item {Performed reverse engineering, static and dynamic analysis and design evaluation on Android applications, drivers and libraries.}
+        % \item {Acted in leadership roles, assigning tasks and coordinating with members in remote offices.}
+        % \item {Took part in penetration testing several Samsung web applications and servers.}
+        % \item {Provided security consulting for internal projects and teams.}
+        % \item {Implemented tools in order to facilitate and automate several project related tasks.}
       \end{cvitems}
     }
 
@@ -48,38 +56,37 @@
     {Sept. 2016 - May 2017} % Date(s)
     {
       \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Designed and implemented secure systems for both proprietary and third-party solutions.}
-        \item {Mostly low-level systems, such as BIOS extensions, bootloaders and hard-drive cryptography.}
-        \item {Worked on remote management tools to enable monitoring and maintenance of these systems.}
-        \item {Development in C, x86 Assembly, Python 2 with Django and REST API}
+        \item {\textbf{Custom Bootloader for Disk Encryption/Decryption} - We developed a full disk encryption solution based on VeraCrypt for ATMs. Unlike most solutions, in this case the key would be stored alongside the BIOS in a section of the NVRAM. We implemented custom code based on VeraCrypt's bootloader and its Windows drivers and on iPXE for remote booting and monitoring of the solution. Most of my contributions were on the bootloader and pre-boot execution environment, where we wrote baremetal code in C and x86 Assembly, but I also touched some of the work done in the drivers which are mostly written in C++. We also implemented a solution for remote management and monitoring of the ATMs in Python using the Django Framework on the server.}
       \end{cvitems}
     }
 
-\cvsubsection{Other Relevant Experiences}
+% \cvsubsection{Other Relevant Experiences}
 
-  \cventry
-    {Intern Full-stack Developer} % Job title
-    {Stoom - Solutions in E-Commerce} % Organization
-    {Campinas, Brazil} % Location
-    {May 2016 - Sept. 2017} % Date(s)
-    {
-      % \begin{cvitems} % Description(s) of tasks/responsibilities
-      %   \item {Assisted designing and implementing the Stoom e-commerce platform, using Apache Struts and Spring frameworks.}
-      %   \item {Full-stack development, working on designing and deployment of third-party projects.}
-      % \end{cvitems}
-    }
+%   \cventry
+%     {Intern Full-stack Developer} % Job title
+%     {Stoom - Solutions in E-Commerce} % Organization
+%     {Campinas, Brazil} % Location
+%     {May 2016 - Sept. 2017} % Date(s)
+%     {
+%       \begin{cvitems} % Description(s) of tasks/responsibilities
+%         \item {\textbf{Stoom e-Commerce Platform} - Assisted on designing and implementing new features on the e-commerce platform and was part of the \underline{\href{https://www.petz.com.br/}{Petz.com.br}} development team acting as a fullstack developer.}
+%         % \item {Assisted designing and implementing features in the Stoom e-commerce platform, using Apache Struts and Spring frameworks.}
+%         % \item {Full-stack development, working on designing and deployment of third-party projects.}
+%       \end{cvitems}
+%     }
 
-  \cventry
-    {Intern Software Developer} % Job title
-    {Big Data University} % Organization
-    {Toronto, Canada} % Location
-    {May 2014 - Sept. 2014} % Date(s)
-    {
-      % \begin{cvitems} % Description(s) of tasks/responsibilities
-      %   \item {Developed showcase products for Bluemix (IBM Cloud)}
-      %   \item {For summer project, developed a home surveillance system in NodeJS and Python on a Raspberry Pi, using Cloudant and Bluemix.}
-      % \end{cvitems}
-    }
+  % \cventry
+  %   {Intern Software Developer} % Job title
+  %   {Big Data University} % Organization
+  %   {Toronto, Canada} % Location
+  %   {May 2014 - Sept. 2014} % Date(s)
+  %   {
+  %     % \begin{cvitems} % Description(s) of tasks/responsibilities
+  %     %   \item {Developed showcase products for Bluemix (IBM Cloud)}
+  %     %   \item {For summer project, developed a home surveillance system in NodeJS and Python on a Raspberry Pi, using Cloudant and Bluemix.}
+  %     % \end{cvitems}
+  %   }
 
 %---------------------------------------------------------
 \end{cventries}
+\newpage
