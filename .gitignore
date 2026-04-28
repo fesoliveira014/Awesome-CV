@@ -24,3 +24,6 @@
 
 ### PDF ###
 *.pdf
+
+.claude/
+.vscode/

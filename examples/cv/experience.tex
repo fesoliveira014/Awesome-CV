@@ -9,56 +9,135 @@
 \begin{cventries}
 
 %---------------------------------------------------------
+
   \cventry
-    {Systems Software Engineer} % Job title
-    {SiDi (Samsung Institute for the Development of Informatics)} % Organization
-    {Campinas, Brazil} % Location
-    {May 2019 - Present} % Date(s)
+    {Backend Software Engineer}
+    {Faire Wholesale Inc.}
+    {Remote, Canada}
+    {Mar 2022 -- Present}
     {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {\textbf{HDM Detector} - A new feature for the Hypervisor Device Management (\textit{HDM}) Framework, part of Samsung's Knox B2B Framework. This feature tries to ensure that a given installed application in a managed device has the correct version. If not, then it takes action ranging from alerting the user or admin to blocking device features, such as the camera or wireless connections. I am responsible for researching the feasibility of the feature and implementing the first proof-of-concept. For this we add code to all layers of the Android Framework: higher level front facing Java APIs, native framework and trusted application connector in C++ and trusted application running in the ARM's TrustZone in C.}
-        \item {\textbf{Bootloader Forensics} - A new security feature for the Samsung Bootloader (\textit{sbl}) for the purpose of validating and detect possible modifications of key aspects of the system. This includes validation of the bootloader and overall system states, collecting relevant data for storage and encrypting and signing the information to prevent tampering. This feature works as an extension of the Verified Boot and other security features already present in the \textit{sbl}.}
-        \item {\textbf{Universal Credential Manager (UCM)} - Embedded Secure Element (eSE) based solution for storing credentials and using cryptographic operations over that environment. We collaborate with a team in South Korea for the extension of UCM. I act as the technical lead for this project and my team is responsible for adding new features to it's trusted application and framework, as well as doing a full refactor of the framework code to enable better testing and further extension.}
-        \item {\textbf{Digital Key} - Solution for using a smartphone as a car key, implementing the specification for Digital Key issued by the Car Connectivity Consortium (CCC). We implemented a solution in ARM TrustZone for enabling secure communication between the Android Framework and the embedded secure element (eSE). We also designed and implemented many features for the Digital Key Framework, which will be available for third party developers as part of Samsung Knox.}
-        \item {\textbf{Miscellaneous} - I also provide support for my team in tasks related to the implementation of trusted applications, low-level programming and systems and provide support on general security concepts.}
-        % \item {Part of team responsible for developing new security systems features and products for Samsung Knox.}
-        % \item {Developed native applications in constrained environments with limited resources (ARM TrustZone).}
-        % \item {Collaborated with members in remote offices on the requirement analysis, design, development and test of trusted applications and systems.}
-        % \item {Contributed to the Samsung Android Framework, implementing Android system services, drivers and features.}
-        % \item {Contributed to the implementation of new feature in embedded elements of Samsung Device, such as in the Embedded Secure Element (eSE).}
+      \begin{cvitems}
+        \item {Led the extraction of the Insider membership domain from a Kotlin monolith into a standalone service, defining service boundaries, establishing independent deployment pipelines, and producing migration patterns adopted as a reference for Faire's broader multi-region architecture initiative.}
+        \item {Designed and implemented asynchronous shipping-estimate precomputation triggered on cart updates via SQS, enabling in-cart shipping cost display for the first time and establishing an event-driven infrastructure pattern that reduced downstream checkout latency from ~1.5\,s to under 50\,ms.}
+        \item {Operate and evolve Kotlin-based backend services on AWS, using MySQL and CockroachDB for transactional storage, DynamoDB for workflow-driven data, Snowflake for analytics, and gRPC for service-to-service and frontend communication.}
+        \item {Collaborate across product, data, and infrastructure teams to design scalable systems, improve platform reliability, and reduce cross-cutting technical debt in support of Faire's Insider membership program.}
+      \end{cvitems}
+    }
+% Felipe [Last Name] — Senior Backend Engineer, Faire (2022–Present)
+% Backend engineer on the team behind Insider, Faire's free-shipping membership program for retailers. Lead BE engineer on the systems below, which power a substantial share of Faire's subsidized GMV across the US, Canada, and EU.
+% Blue/Green Architecture for Quarterly Coverage Refreshes (2026)
+% The existing quarterly refresh of the program's coverage data was a 6-hour overwrite of the live production table — no validation window, no rollback path, and inconsistent state for any user hitting the system mid-job. Designed a Blue/Green system that pre-computes the next quarter's data into an inactive partition over the preceding two weeks, then atomically cuts production traffic over to it in under five seconds via a Redis-cached routing layer with audit trail, shadow reads for safe migration, and one-command rollback. Replaces the team's highest-risk recurring deploy with a validated, reversible operation; first production swap targeting Q3 2026.
+% Service Extraction from Monolith (2024)
+% Tightly-coupled membership program logic in Faire's MySQL-backed monolith was the primary blocker for Faire's planned multi-region expansion across Europe and the US. Extracted it into a standalone Kotlin/gRPC service on CockroachDB — set up the service from scratch, replicated core domain entities, migrated data providers and ETL jobs, and built an experiment-driven traffic-allocation layer with a dark-reads kill switch for safe gradual cutover. Cutover completed without user-facing incidents and unblocked Faire's multi-region rollout.
+% Brand-Funded Free Shipping Program (2024)
+% The program's fully-Faire-funded shipping model was no longer economically sustainable at scale and needed brands to share the cost. Sole BE engineer on a new model where brands could opt into funding free shipping in exchange for expanded marketplace coverage — designed the enrollment APIs, data model, and a two-tier per-brand stats layer (with category-level fallback for new brands) powering the opt-in landing page. Shipped on a hard external deadline; reached 80% brand adoption, expanded impression coverage from 46% to 69%, and drove +125% Y/Y growth in new free-shipping retailer–brand relationships.
+% Margin-Aware Opening Order Discounts (2024–2025)
+% High free-shipping coverage created wide variability in per-order margin with no mechanism to steer demand toward more sustainable relationships. Backend lead on a targeted 5%-off opening order discount on a curated per-retailer subset of brands — built the targeting ingestion pipeline, payout and attribution across cart and checkout, and discovery surfacing. Globally rolled out June 2025: +3.1% dollars confirmed, +2.16% opening order volume, +1.23% brand orders (all stat sig at 90%).
+% Ongoing Responsibilities
+% Rotating production on-call (~every 2 months, two-week shifts alternating primary/secondary). Bug triage and incident response across team-owned services; lead post-incident reviews. Cross-functional partnership across product, design, data science, frontend, mobile, and adjacent backend teams.
+% Stack: Kotlin · gRPC · Protobuf · MySQL · CockroachDB · DynamoDB · Snowflake · Redis · Datadog
+%---------------------------------------------------------
+ 
+  \cventry
+    {Systems Software Engineer}
+    {SiDi (Samsung Institute for the Development of Informatics)}
+    {Campinas, Brazil}
+    {May 2019 -- Feb 2022}
+    {
+      \begin{cvitems}
+        \item {Led a major architectural refactor of Samsung's eSE-based credential platform (Universal Credential Manager), redesigning interfaces across trusted application and framework layers to improve testability and extensibility, enabling faster feature integration by partner teams in South Korea.}
+        \item {Designed cross-layer platform APIs for Samsung's Digital Key solution, building secure communication flows between the Android Framework and the embedded secure element (eSE) through ARM TrustZone and exposing framework capabilities for third-party developers via Samsung Knox.}
+        \item {Researched and delivered the first proof of concept for HDM Detector, a Samsung Knox platform feature for validating application versions on managed devices and enforcing policy-driven remediation. Contributed across Java framework APIs, native layers, trusted application connectors, and TrustZone components.}
+        \item {Developed Bootloader Forensics, a bootloader-level platform security feature for validating critical system state, detecting tampering, and securely collecting signed and encrypted forensic data as an extension of Samsung's Verified Boot chain.}
+        \item {Designed and implemented security and systems software for Samsung Knox across the Android Framework, native C/C++ layers, embedded secure elements, and ARM TrustZone trusted applications.}
+      \end{cvitems}
+    }
+ 
+%---------------------------------------------------------
+ 
+  \cventry
+    {Software Security Analyst}
+    {Samsung}
+    {Campinas, Brazil}
+    {May 2017 -- Apr 2019}
+    {
+      \begin{cvitems}
+        \item {Performed security assessments across Samsung's mobile, embedded, and web platforms — including Android system services, Tizen applications, backend services, and IoT devices — combining reverse engineering, exploit development, and security design analysis to identify vulnerabilities and drive remediation.}
+        \item {Built internal tooling to reverse engineer gRPC protocols and assess ML-facing attack surfaces during a comprehensive security evaluation of Samsung's Bixby voice assistant, covering client applications and backend services.}
+        \item {Identified privilege escalation and unauthorized access vulnerabilities in Android system services across Samsung flagship devices; developed proof-of-concept exploits and produced technical reports guiding remediation by platform engineering teams.}
+      \end{cvitems}
+    }
+ 
+%---------------------------------------------------------
+ 
+  \cventry
+    {Software Engineer}
+    {Kryptus -- Solutions in Information Security}
+    {Campinas, Brazil}
+    {Sept. 2016 -- May 2017}
+    {
+      \begin{cvitems}
+        \item {Contributed to a full-disk encryption platform for ATMs based on VeraCrypt, implementing low-level bootloader and pre-boot functionality in C and x86 assembly with custom key storage in BIOS-adjacent NVRAM and support for remote boot, monitoring, and management via iPXE.}
+        \item {Also contributed to related Windows driver work in C++ and to the server-side remote management platform built in Python with Django.}
       \end{cvitems}
     }
 
-  \cventry
-    {Software Security Analyst} % Job title
-    {} % Organization
-    {} % Location
-    {May 2017 - Apr 2019} % Date(s)
-    {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {\textbf{Bixby} - I was responsible for doing a full security assessment of Samsung's voice assistant, Bixby. This meant touching most aspects of the solution, inspecting the phone clients, servers, and researching ways to assess the security of its machine learning capabilities. This would be through novel methods, such as Adversarial Attacks on the ML models. I also conducted the development of tools to reverse engineer the gRPC protocol used for communication between the client and servers.}
-        \item {\textbf{Android System Services} - Our team was responsible for the continuous security assessment of Android system services of every Samsung flagship device. We would look for vulnerabilities in these services that could enable attacks such as privilege escalation, arbitrary read/write or unauthorized access to certain features. This included writing exploits for vulnerabilities we found and writing reports that would be sent to the teams responsible for the assessed service.}
-        \item {\textbf{Tizen Services and Applications} - We provided security analysis for Tizen applications and services. Tizen is a Linux-based operating system that powers Samsung wearables, smart TVs, IoT devices, among others. I was part of a small subset of our team that specialized and led security assessments in these devices.}
-        \item {\textbf{Web and Android Applications and Services} - We also provided security analysis for web applications, such as Samsung Account, and Android applications, such as SHealth.}
-        % \item {Performed security analysis in Android and Tizen services, device drivers and applications.}
-        % \item {Performed reverse engineering, static and dynamic analysis and design evaluation on Android applications, drivers and libraries.}
-        % \item {Acted in leadership roles, assigning tasks and coordinating with members in remote offices.}
-        % \item {Took part in penetration testing several Samsung web applications and servers.}
-        % \item {Provided security consulting for internal projects and teams.}
-        % \item {Implemented tools in order to facilitate and automate several project related tasks.}
-      \end{cvitems}
-    }
+%   \cventry
+%     {Backend Software Engineer}
+%     {Faire Wholesale Inc.}
+%     {Remote, Canada}
+%     {Mar 2022 - Present}
+%     {
+%       \begin{cvitems}
+%         \item {Lead backend engineering initiatives for Faire's Insider membership program, delivering features that power free shipping, discounts, and exclusive promotions. Collaborate with product, data, and engineering partners to design scalable systems, improve reliability, and reduce technical debt.}
+%         \item {Develop on a Kotlin-based backend running on AWS, using MySQL and CockroachDB for transactional storage, Snowflake for analytics, DynamoDB for workflow-driven data, and gRPC for frontend and service-to-service communication.}
+%         \item {Led the extraction of the Insider domain from the monolith into a standalone service, improving deployment autonomy and engineering velocity while supporting Faire's migration toward a multi-region backend architecture.}
+%         \item {Designed and implemented asynchronous shipping-estimate precomputation on cart updates, enabling shipping costs to be displayed in-cart for the first time and establishing a path to reduce checkout estimate latency from roughly 1.5 s to under 50 ms.}
+%       \end{cvitems}
+%     }
 
-  \cventry
-    {Software Engineer} % Job title
-    {Kryptus - Solutions in Information Security} % Organization
-    {Campinas, Brazil} % Location
-    {Sept. 2016 - May 2017} % Date(s)
-    {
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {\textbf{Custom Bootloader for Disk Encryption/Decryption} - We developed a full disk encryption solution based on VeraCrypt for ATMs. Unlike most solutions, in this case the key would be stored alongside the BIOS in a section of the NVRAM. We implemented custom code based on VeraCrypt's bootloader and its Windows drivers and on iPXE for remote booting and monitoring of the solution. Most of my contributions were on the bootloader and pre-boot execution environment, where we wrote baremetal code in C and x86 Assembly, but I also touched some of the work done in the drivers which are mostly written in C++. We also implemented a solution for remote management and monitoring of the ATMs in Python using the Django Framework on the server.}
-      \end{cvitems}
-    }
+% \cventry
+%     {Systems Software Engineer}
+%     {SiDi (Samsung Institute for the Development of Informatics)}
+%     {Campinas, Brazil}
+%     {May 2019 - Feb 2022}
+%     {
+%       \begin{cvitems}
+%         \item {Designed and implemented security and systems software for Samsung Knox and other platform-level initiatives, working across the Android Framework, native C/C++ layers, embedded secure elements, and trusted applications in ARM TrustZone.}
+%         \item {Researched and delivered the first proof of concept for HDM Detector, a Samsung Knox feature for validating application versions on managed devices and enforcing policy-driven remediation, including user/admin alerts and device capability restrictions. Contributed across Java framework APIs, native framework layers, trusted application connectors, and TrustZone components.}
+%         \item {Developed Bootloader Forensics, a Samsung bootloader security feature for validating critical system state, detecting tampering, and securely collecting signed and encrypted forensic data as an extension of existing protections such as Verified Boot.}
+%         \item {Served as technical lead for the extension of Universal Credential Manager (UCM), Samsung's eSE-based credential platform, in collaboration with a team in South Korea. Added new features across trusted application and framework layers and led a major refactor to improve testability, maintainability, and extensibility.}
+%         \item {Helped design and implement Samsung's Digital Key solution, enabling smartphones to function as car keys in alignment with Car Connectivity Consortium (CCC) specifications. Built secure communication flows between the Android Framework and the embedded secure element (eSE) through ARM TrustZone and contributed framework capabilities intended for third-party developers through Samsung Knox.}
+%       \end{cvitems}
+%     }
+
+% \cventry
+%     {Software Security Analyst}
+%     {Samsung}
+%     {Campinas, Brazil}
+%     {May 2017 - Apr 2019}
+%     {
+%       \begin{cvitems}
+%         \item {Performed security assessments across Samsung mobile, web, and embedded platforms, focusing on Android system services, Tizen applications, backend services, and client applications. Combined reverse engineering, exploit development, and security design analysis to identify vulnerabilities and support remediation.}
+%         \item {Conducted a comprehensive security assessment of Samsung's voice assistant, Bixby, covering client applications, backend services, and machine learning attack surfaces. Explored adversarial attack techniques against ML models and developed tooling to reverse engineer the gRPC protocol used between clients and servers.}
+%         \item {Performed ongoing security assessments of Android system services across Samsung flagship devices, identifying vulnerabilities that could lead to privilege escalation, arbitrary read/write, or unauthorized access to protected features. Built proof-of-concept exploits to validate findings and produced technical reports for remediation teams.}
+%         \item {Led or contributed to security evaluations of Tizen services and applications for wearables, smart TVs, and IoT devices, becoming part of a specialized subgroup focused on Linux-based embedded platforms.}
+%         \item {Assessed the security of Samsung web and Android applications, including products such as Samsung Account and SHealth, identifying vulnerabilities and providing remediation guidance to engineering teams.}
+%       \end{cvitems}
+%     }
+
+% \cventry
+%     {Software Engineer}
+%     {Kryptus - Solutions in Information Security}
+%     {Campinas, Brazil}
+%     {Sept. 2016 - May 2017}
+%     {
+%       \begin{cvitems}
+%         \item {Contributed to the development of a full-disk encryption solution for ATMs based on VeraCrypt, with custom key storage in BIOS-adjacent NVRAM and support for remote boot, monitoring, and management.}
+%         \item {Implemented low-level functionality in the bootloader and pre-boot environment using C and x86 assembly, building on VeraCrypt bootloader internals and iPXE to support secure boot-time encryption and remote operational workflows.}
+%         \item {Also contributed to related Windows driver work in C++ and to the server-side remote management and monitoring platform built in Python with Django.}
+%       \end{cvitems}
+%     }
 
 % \cvsubsection{Other Relevant Experiences}
 
@@ -89,4 +168,4 @@
 
 %---------------------------------------------------------
 \end{cventries}
-\newpage
+% \newpage
